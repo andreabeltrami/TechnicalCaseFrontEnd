@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ApiModule } from './api/api.module';
 import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from 'src/shared/shared.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     ApiModule.forRoot({ rootUrl: environment.rootUrl }),
+    SharedModule,
+    NgbModule
 
   ],
   bootstrap: [AppComponent]

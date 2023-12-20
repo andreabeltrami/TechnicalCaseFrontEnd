@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th *ngFor="let column of columns">
+        <span>{{ column }}</span>
+      </th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of sourceData">
+      <td *ngFor="let column of columns">{{ data[column] }}</td>
+      <td>
+        <button (click)="editRow(data)">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
