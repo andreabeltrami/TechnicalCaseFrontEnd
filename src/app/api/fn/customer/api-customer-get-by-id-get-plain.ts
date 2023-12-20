@@ -12,7 +12,7 @@ export interface ApiCustomerGetByIdGet$Plain$Params {
   id?: string;
 }
 
-export function apiCustomerGetByIdGet$Plain(http: HttpClient, rootUrl: string, params?: ApiCustomerGetByIdGet$Plain$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<Customer>>> {
+export function apiCustomerGetByIdGet$Plain(http: HttpClient, rootUrl: string, params?: ApiCustomerGetByIdGet$Plain$Params, context?: HttpContext): Observable<StrictHttpResponse<Customer>> {
   const rb = new RequestBuilder(rootUrl, apiCustomerGetByIdGet$Plain.PATH, 'get');
   if (params) {
     rb.query('id', params.id, {});
@@ -23,7 +23,7 @@ export function apiCustomerGetByIdGet$Plain(http: HttpClient, rootUrl: string, p
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<Array<Customer>>;
+      return r as StrictHttpResponse<Customer>;
     })
   );
 }

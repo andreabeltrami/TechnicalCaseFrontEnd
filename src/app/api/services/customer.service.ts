@@ -90,7 +90,7 @@ export class CustomerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  apiCustomerGetByIdGet$Plain$Response(params?: ApiCustomerGetByIdGet$Plain$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<Customer>>> {
+  apiCustomerGetByIdGet$Plain$Response(params?: ApiCustomerGetByIdGet$Plain$Params, context?: HttpContext): Observable<StrictHttpResponse<Customer>> {
     return apiCustomerGetByIdGet$Plain(this.http, this.rootUrl, params, context);
   }
 
@@ -100,9 +100,9 @@ export class CustomerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  apiCustomerGetByIdGet$Plain(params?: ApiCustomerGetByIdGet$Plain$Params, context?: HttpContext): Observable<Array<Customer>> {
+  apiCustomerGetByIdGet$Plain(params?: ApiCustomerGetByIdGet$Plain$Params, context?: HttpContext): Observable<Customer> {
     return this.apiCustomerGetByIdGet$Plain$Response(params, context).pipe(
-      map((r: StrictHttpResponse<Array<Customer>>): Array<Customer> => r.body)
+      map((r: StrictHttpResponse<Customer>): Customer => r.body)
     );
   }
 
@@ -112,7 +112,7 @@ export class CustomerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  apiCustomerGetByIdGet$Response(params?: ApiCustomerGetByIdGet$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<Customer>>> {
+  apiCustomerGetByIdGet$Response(params?: ApiCustomerGetByIdGet$Params, context?: HttpContext): Observable<StrictHttpResponse<Customer>> {
     return apiCustomerGetByIdGet(this.http, this.rootUrl, params, context);
   }
 
@@ -122,9 +122,9 @@ export class CustomerService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  apiCustomerGetByIdGet(params?: ApiCustomerGetByIdGet$Params, context?: HttpContext): Observable<Array<Customer>> {
+  apiCustomerGetByIdGet(params?: ApiCustomerGetByIdGet$Params, context?: HttpContext): Observable<Customer> {
     return this.apiCustomerGetByIdGet$Response(params, context).pipe(
-      map((r: StrictHttpResponse<Array<Customer>>): Array<Customer> => r.body)
+      map((r: StrictHttpResponse<Customer>): Customer => r.body)
     );
   }
 

@@ -1,184 +1,40 @@
 {
-    "openapi": "3.0.1",
-    "info": {
-      "title": "BackEnd",
-      "version": "1.0"
-    },
-    "paths": {
-      "/api/Customer/GetAll": {
-        "get": {
-          "tags": [
-            "Customer"
-          ],
-          "responses": {
-            "200": {
-              "description": "Success",
-              "content": {
-                "text/plain": {
-                  "schema": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/CustomerVm"
-                    }
-                  }
-                },
-                "application/json": {
-                  "schema": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/CustomerVm"
-                    }
-                  }
-                },
-                "text/json": {
-                  "schema": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/CustomerVm"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "/api/Customer/GetById": {
-        "get": {
-          "tags": [
-            "Customer"
-          ],
-          "parameters": [
-            {
-              "name": "id",
-              "in": "query",
-              "schema": {
-                "type": "string"
-              }
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "Success",
-              "content": {
-                "text/plain": {
-                  "schema": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Customer"
-                    }
-                  }
-                },
-                "application/json": {
-                  "schema": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Customer"
-                    }
-                  }
-                },
-                "text/json": {
-                  "schema": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Customer"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "/api/Customer/Create": {
-        "post": {
-          "tags": [
-            "Customer"
-          ],
-          "requestBody": {
+  "openapi": "3.0.1",
+  "info": {
+    "title": "BackEnd",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Customer/GetAll": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerVm"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Customer"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerVm"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Customer"
-                }
-              },
-              "application/*+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Customer"
-                }
-              }
-            }
-          },
-          "responses": {
-            "200": {
-              "description": "Success",
-              "content": {
-                "text/plain": {
-                  "schema": {
-                    "$ref": "#/components/schemas/Customer"
-                  }
-                },
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/Customer"
-                  }
-                },
-                "text/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/Customer"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "/api/Customer/Update": {
-        "post": {
-          "tags": [
-            "Customer"
-          ],
-          "requestBody": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Customer"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Customer"
-                }
-              },
-              "application/*+json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Customer"
-                }
-              }
-            }
-          },
-          "responses": {
-            "200": {
-              "description": "Success",
-              "content": {
-                "text/plain": {
-                  "schema": {
-                    "$ref": "#/components/schemas/Customer"
-                  }
-                },
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/Customer"
-                  }
-                },
-                "text/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/Customer"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerVm"
                   }
                 }
               }
@@ -187,89 +43,224 @@
         }
       }
     },
-    "components": {
-      "schemas": {
-        "Customer": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string",
-              "nullable": true
-            },
-            "name": {
-              "type": "string",
-              "nullable": true
-            },
-            "address": {
-              "type": "string",
-              "nullable": true
-            },
-            "state": {
-              "type": "string",
-              "nullable": true
-            },
-            "country": {
-              "type": "string",
-              "nullable": true
-            },
-            "subscriptionState": {
-              "type": "integer",
-              "format": "int32"
-            },
-            "invoices": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Invoice"
+    "/api/Customer/GetById": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Customer"
+                }
               },
-              "nullable": true
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Customer"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Customer"
+                }
+              }
             }
-          },
-          "additionalProperties": false
+          }
+        }
+      }
+    },
+    "/api/Customer/Create": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            }
+          }
         },
-        "CustomerVm": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string",
-              "nullable": true
-            },
-            "name": {
-              "type": "string",
-              "nullable": true
-            },
-            "address": {
-              "type": "string",
-              "nullable": true
-            },
-            "subscriptionState": {
-              "type": "integer",
-              "format": "int32"
-            },
-            "invoiceNumbers": {
-              "type": "integer",
-              "format": "int32"
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Customer"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Customer"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Customer"
+                }
+              }
             }
-          },
-          "additionalProperties": false
+          }
+        }
+      }
+    },
+    "/api/Customer/Update": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            }
+          }
         },
-        "Invoice": {
-          "type": "object",
-          "properties": {
-            "number": {
-              "type": "string",
-              "nullable": true
-            },
-            "date": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "total": {
-              "type": "number",
-              "format": "double"
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Customer"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Customer"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Customer"
+                }
+              }
             }
-          },
-          "additionalProperties": false
+          }
         }
       }
     }
+  },
+  "components": {
+    "schemas": {
+      "Customer": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "state": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "subscriptionState": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "invoices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Invoice"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomerVm": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "subscriptionState": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "invoiceNumbers": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Invoice": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "string",
+            "nullable": true
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "total": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
   }
+}

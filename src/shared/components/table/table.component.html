@@ -4,13 +4,13 @@
       <th *ngFor="let column of columns">
         <span>{{ column }}</span>
       </th>
-      <th>Action</th>
+      <th *ngIf="showAction">Action</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let data of sourceData">
       <td *ngFor="let column of columns">{{ data[column] }}</td>
-      <td>
+      <td  *ngIf="showAction">
         <button (click)="editRow(data)">Edit</button>
       </td>
     </tr>

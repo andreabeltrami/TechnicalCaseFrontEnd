@@ -8,6 +8,7 @@ import { Observable, Subject } from 'rxjs';
 })
 export class TableComponent implements OnInit, OnChanges {
   @Input() sourceData: any;
+  @Input() showAction: boolean = false;
   @Input() hideColumns: string[] = [];
 
   @Output() editRowEvent = new EventEmitter<any>();
@@ -29,11 +30,23 @@ export class TableComponent implements OnInit, OnChanges {
     if(this.sourceData){
       let firstElement: any[] = this.sourceData[0];
       const columTemp = Object.getOwnPropertyNames(firstElement);
-      this.columns = columTemp.filter(x => !this.hideColumns.includes(x));
+      this.columns = columTemp.
+        filter(x => !this.hideColumns.includes(x))
+        .map(x => this.toSentenceCase(x));
     }
   }
 
   editRow(data: any){
     this.editRowEvent.emit(data);
+  }
+
+  toSentenceCase(inputString: string): string {
+    if (!inputString.trim()) {
+      return '';
+    }
+    const sentenceCaseString = inputString.charAt(0).toUpperCase() + inputString.slice(1).toLowerCase();
+    const finalString = sentenceCaseString.replace(/\s+/g, ' ');
+  
+    return finalString;
   }
 }

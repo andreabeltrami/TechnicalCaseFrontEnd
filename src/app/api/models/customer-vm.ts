@@ -5,5 +5,5 @@ export interface CustomerVm {
   id?: string | null;
   invoiceNumbers?: number;
   name?: string | null;
-  subscriptionState?: number;
+  subscriptionState?:  string | null;
 }

@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from 'src/shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     ApiModule.forRoot({ rootUrl: environment.rootUrl }),
     SharedModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   bootstrap: [AppComponent]
