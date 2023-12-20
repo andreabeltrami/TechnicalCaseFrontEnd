@@ -31,8 +31,7 @@ export class TableComponent implements OnInit, OnChanges {
       let firstElement: any[] = this.sourceData[0];
       const columTemp = Object.getOwnPropertyNames(firstElement);
       this.columns = columTemp.
-        filter(x => !this.hideColumns.includes(x))
-        .map(x => this.toSentenceCase(x));
+        filter(x => !this.hideColumns.includes(x));
     }
   }
 

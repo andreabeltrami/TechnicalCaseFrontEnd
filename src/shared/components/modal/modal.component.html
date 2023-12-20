@@ -3,7 +3,7 @@
     <h4 class="modal-title" id="modal-basic-title">{{title}}</h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()">Close</button>
 </div>
-<div class="modal-body">
+<div class="modal-body" style="max-height: 400px; overflow: auto;">
     <ng-content></ng-content>
 </div>
 <div class="modal-footer">
